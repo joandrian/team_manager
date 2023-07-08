@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="container">
+        <section class="row">
+            <div class="col-12 ">
+                <h1>Team administator</h1>
+                <p>Welcome to our application</p>
+                <div class="col-3 ">
+                <nav class="navbar navbar-light bg-light">
+                   <a href="{{ path('app_teams_new') }}" class="btn-outline-success" >Create new team</a>
+                   <a href="{{ path('app_teams_marketplace') }}" class="btn-outline-success" >Buy/Sell player</a>
+                </nav>
+                </div>    
+            </div>
+           
+            {% for team in teams.data %}   
+                <div class="col-12">
+                    <div class="card ">
+                        <div class="card-header bg-info ">
+                            <h3 class="card-title ">{{ team.name }}</h3>
+                        </div>
+                        <div class="card-body">
+                            {% if team.players is empty %}
+                                <span>Any player</span> 
+                            {% else %}
+                            <h5> Player list :</h5>
+                                <ul class="list-group list-group-flush">
+                                    {% for players in team.players %}
+                                    <li class="list-group-item">{{ players.Name }}  {{ players.Surname }} </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>    
+            {% endfor %}
+            {% set path = 'app_teams_index' %}
+            {% set pages = teams.pages %}
+            {% set currentPage = teams.page %}
+            {% include "_partials/_pagination.html.twig" %}
+        </section>
+    </main>
+{% endblock %}

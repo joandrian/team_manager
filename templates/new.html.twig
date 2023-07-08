@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Teams{% endblock %}
+
+{% block body %}
+    <h1>Create new Teams</h1>
+
+    {{ form_start(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.country) }}
+        {{ form_row(form.moneyBalance) }}
+
+        <h3>Players :</h3>       
+        <div class="col-sm-8 col-sm-offset-2" id="player_list" data-prototype="{{ form_widget(form.players.vars.prototype)|e('html_attr') }}">
+            <div class="panel panel-warning">
+                {% for row in form.players %}
+                    <div class="panel-body">
+                        {{ form_row(row) }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_teams_index') }}">back to list</a>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+    <script src="{{ asset('assets/js/newplayer.js') }}" defer></script>
+{% endblock %}
