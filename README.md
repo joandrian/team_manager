@@ -41,4 +41,4 @@ php bin/console doctrine:fixtures:load
 - Click on "sell/Buy" to sell or buy from one team to another.
 # Result
 
-![Capture]()
+![Capture](https://github.com/joandrian/team_manager/blob/master/Capture_home.png?raw=true)
