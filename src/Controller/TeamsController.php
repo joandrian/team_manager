@@ -22,7 +22,7 @@ class TeamsController extends AbstractController
        //Retrieve the page number from the url
        $page = $request->query->getInt('page', 1);
        return $this->render('index.html.twig', [
-           'teams' => $teamsRepository->findTeamsPaginated($page,2),
+           'teams' => $teamsRepository->findTeamsPaginated($page,3),
        ]);
     }
 

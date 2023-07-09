@@ -36,9 +36,9 @@ php bin/console doctrine:fixtures:load
 ```sh
     symfony server:start
 ```
-- The home list all the teams with there players
-- click on "Create Teams" to create new teams with there players
-- Click on "sell/Buy" to sell or buy from one team to another.
+- The home list all the teams with there players (three teams per page)
+- click on "Create neaw Team" to create new teams with there players
+- Click on "Buy/Sell player" to sell or buy from one team to another.
 # Result
 
 ![Capture](https://github.com/joandrian/team_manager/blob/master/Capture_home.png?raw=true)

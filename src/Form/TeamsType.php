@@ -23,12 +23,10 @@ class TeamsType extends AbstractType
             'entry_options' => ['label' => false],
             'prototype' => true,
             'by_reference' => false,
-            // this allows the creation of new forms and the prototype too
             'allow_add' => true,
-            // self explanatory, this one allows the form to be removed
             'allow_delete' => true
         ]);
-        $builder->add('Add', SubmitType::class, [
+        $builder->add('save', SubmitType::class, [
             'attr' => [
                 'class' => 'btn btn-success'
             ]

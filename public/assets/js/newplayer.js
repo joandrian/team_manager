@@ -1,7 +1,7 @@
  // this variable is the list in the dom, it's initiliazed when the document is ready
  var $collectionHolder;
  // the link which we click on to add new items
- var $addNewItem = $('<a href="#" class="btn btn-info">Add new player</a>');
+ var $addNewItem = $('<div class="col-6" style="margin-top: 10px;"><button type="button" class="btn btn-primary btn-sm">Add player</button></div>');
  // when the page is loaded and ready
  $(document).ready(function () 
  {
@@ -35,10 +35,8 @@
  */
  function addNewForm() {
      // getting the prototype
-     // the prototype is the form itself, plain html
      var prototype = $collectionHolder.data('prototype');
      // get the index
-     // this is the index we set when the document was ready, look above for more info
      var index = $collectionHolder.data('index');
      // create the form
      var newForm = prototype;
@@ -47,7 +45,6 @@
      // incrementing the index data and setting it again to the collectionHolder
      $collectionHolder.data('index', index+1);
      // create the panel
-     // this is the panel that will be appending to the collectionHolder
      var $panel = $('<div class="panel panel-warning"></div>');
      // create the panel-body and append the form to it
      var $panelBody = $('<div class="panel-body"></div>').append(newForm);
@@ -56,7 +53,6 @@
      // append the removebutton to the new panel
      addRemoveButton($panel);
      // append the panel to the addNewItem
-     // we are doing it this way to that the link is always at the bottom of the collectionHolder
      $addNewItem.before($panel);
  }
 
@@ -66,7 +62,7 @@
  */
  function addRemoveButton ($panel) {
      // create remove button
-     var $removeButton = $('<a href="#" class="btn btn-danger">Remove</a>');
+     var $removeButton = $('<div class="col-6"><a href="#" class="btn btn-danger btn-sm">remove player</a></div>');
      // appending the removebutton to the panel footer
      var $panelFooter = $('<div class="panel-footer"></div>').append($removeButton);
      // handle the click event of the remove button
