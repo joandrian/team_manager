@@ -19,7 +19,7 @@ class MarketplaceType extends AbstractType
             'mapped' => false,
             'placeholder' => 'Seller Team ?'
         ]);
-        
+
         $builder->add('buyer', EntityType::class, [
             'class' => Teams::class,
             'choice_label' => 'name',
@@ -31,7 +31,7 @@ class MarketplaceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Teams ::class,
+            'data_class' => Teams::class,
         ]);
     }
 }

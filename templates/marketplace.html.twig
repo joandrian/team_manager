@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block javascripts %}
 {{ parent() }}
-    <script src="{{ asset('assets/js/scripts.js') }}" defer></script>
+<script src="{{ asset('assets/js/scripts.js') }}" defer></script>
 {% endblock %}
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% block title %}Sell / Buy Players{% endblock %}
@@ -10,35 +10,34 @@
     <section class="row">
         <div class="col-12 ">
             <h1>Sell / Buy Players</h1>
-                {{ form_start(form) }}
-                <div class="row g-2">
-                    <div class="col">
-                        {{ form_widget(form.seller, { 'attr': {'class': 'seller form-select'} }) }}
-                    </div>
-                    <div class="col">
-                        {{ form_widget(form.buyer, { 'attr': {'class': 'buyer form-select'} }) }}
-                    </div>
+            {{ form_start(form) }}
+            <div class="row g-2">
+                <div class="col">
+                    {{ form_widget(form.seller, { 'attr': {'class': 'seller form-select'} }) }}
                 </div>
+                <div class="col">
+                    {{ form_widget(form.buyer, { 'attr': {'class': 'buyer form-select'} }) }}
+                </div>
+            </div>
             <div class="row g-6">
-                <div class="col-6" >
+                <div class="col-6">
                     <div id="anyplayer" style="display: none;">Any player yet for this team</div>
                     <div id="playerlist" style="display: none;">
                         <label>Player list :</label>
-                        <select class="form-select sel_player" name="playerlist" size="10" required >
-                    </select>
+                        <select class="form-select sel_player" name="playerlist" size="10" required>
+                        </select>
                     </div>
                 </div>
                 <div class="col-6" style="margin-top: 10px;">
                     <label>Amount $
-                        <input type="number" placeholder="0.00" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" onblur="
+                        <input type="number" placeholder="0.00" required name="price" min="0" value="0" step="0.01"
+                            title="Currency" pattern="^\d+(?:\.\d{1,2})?$" onblur="
                     this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'
                     "></label>
                     <p id="teamSelectError"></p>
                     <button class="btn btn-primary" type="submit">Sell selected player </button>
                 </div>
-            </div
-            {{ form_end(form) }}
-            <a href="{{ path('app_teams_index') }}">back to list</a>
+            </div {{ form_end(form) }} <a href="{{ path('app_teams_index') }}">back to list</a>
         </div>
     </section>
 </main>

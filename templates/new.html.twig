@@ -11,32 +11,33 @@
             <div class="row">
                 <div class="col-6">
                     <fieldset>
-                        <h3>Team :</h3> 
-                    {{ form_start(form) }}
+                        <h3>Team :</h3>
+                        {{ form_start(form) }}
 
                         {{ form_row(form.name) }}
                         {{ form_row(form.country) }}
                         {{ form_row(form.moneyBalance) }}
 
-                    <h3>Players :</h3> 
-                    <fieldset class="border p-2" >     
-                        <div class="col-sm-8 col-sm-offset-2" id="player_list" data-prototype="{{ form_widget(form.players.vars.prototype)|e('html_attr') }}">
-                            <div class="panel panel-warning">
-                                {% for row in form.players %}
+                        <h3>Players :</h3>
+                        <fieldset class="border p-2">
+                            <div class="col-sm-8 col-sm-offset-2" id="player_list"
+                                data-prototype="{{ form_widget(form.players.vars.prototype)|e('html_attr') }}">
+                                <div class="panel panel-warning">
+                                    {% for row in form.players %}
                                     <div class="panel-body">
                                         {{ form_row(row) }}
                                     </div>
-                                {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.save,{ 'label': 'Create this team' })}}
                             </div>
                         </div>
-                    </fieldset> 
-                    <div class="row">
-                        <div class="col-12">
-                            {{ form_row(form.save,{ 'label': 'Create this team' })}}
-                        </div>
-                    </div>
-                    {{ form_end(form) }}
-                </fieldset>
+                        {{ form_end(form) }}
+                    </fieldset>
                 </div>
             </div>
             <a href="{{ path('app_teams_index') }}">back to list</a>
@@ -46,5 +47,5 @@
 {% endblock %}
 {% block javascripts %}
 {{ parent() }}
-    <script src="{{ asset('assets/js/newplayer.js') }}" defer></script>
+<script src="{{ asset('assets/js/newplayer.js') }}" defer></script>
 {% endblock %}

@@ -1,7 +1,7 @@
  // this variable is the list in the dom, it's initiliazed when the document is ready
  var $collectionHolder;
  // the link which we click on to add new items
- var $addNewItem = $('<div class="col-6" style="margin-top: 10px;"><button type="button" class="btn btn-primary btn-sm">Add player</button></div>');
+ var $addNewItem = $('<div class="col-6" style="Fmargin-top: 10px;"><button type="button" class="btn btn-primary btn-sm">Add player</button></div>');
  // when the page is loaded and ready
  $(document).ready(function () 
  {
